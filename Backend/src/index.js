@@ -16,6 +16,8 @@ const __dirname = path.resolve();
 app.use(cookieParser());
 app.use(express.json({ limit: "10mb" }));
 app.use(morgan("tiny"));
+app.set('trust proxy', 1);
+
 app.use(
     cors({
         origin: "http://localhost:3000",
